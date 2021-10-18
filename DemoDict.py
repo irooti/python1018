@@ -15,3 +15,19 @@ for item in device.items():
 print("---key, value---")
 for k, v in device.items():
     print(k, v)
+
+#참조를 복사해서 전달
+phone = {"kim":"111", "lee":"222"}
+p = phone
+print(id(phone), id(p))
+
+#교집합을 구하는 함수
+def intersect(prelist, postlist):
+    result = []
+    for x in prelist:
+        if x in postlist and x not in result:
+            result.append(x)
+    return result
+
+#함수 호출
+print(intersect("HAM", "SPAM"))
