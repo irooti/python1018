@@ -9,6 +9,7 @@ print(device)
 
 del device["아이폰"]
 #중단점 (Break Point): 디버깅하는 모드에서는 멈춤
+#중단점(Break Point)
 for item in device.items():
     print(item)
 
@@ -23,10 +24,14 @@ print(id(phone), id(p))
 
 #교집합을 구하는 함수
 def intersect(prelist, postlist):
+    #함수 내부에만 있는 지역변수
     result = []
+    #단어의 글자를 슬라이싱하는 코드: H(0) | A(1) | M(2)
     for x in prelist:
+        #postlist에 있고 result에는 없는 글자면 추가
         if x in postlist and x not in result:
             result.append(x)
+    #루프 다 돌고 나서 리턴
     return result
 
 #함수 호출
