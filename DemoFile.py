@@ -55,7 +55,9 @@ f = open("c:\\work\\demo.txt", "a+", encoding='utf-8')
 #f = open("c:\\work\\demo.txt", "wt", encoding='utf-8')
 f.write("새로운 데이터\n")
 f.close()
-
 #파일 읽기
+#다중 라인 주석 처리: ctrl + /
+f.close()
 f = open("c:\\work\\demo.txt", "rt", encoding='utf-8')
 print(f.read())
+print()
