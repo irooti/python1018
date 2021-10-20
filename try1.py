@@ -4,8 +4,17 @@
 def divide(a, b):
     return a/b
 
-#함수 호출
-result = divide(5, "aa")
-print("결과:{0}".format(result))
+#에러 처리
+try:
+    #함수 호출
+    result = divide(5, 2)
+except ZeroDivisionError:
+    print("0으로 나누면 안됩니다.")
+except TypeError:
+    print("숫자여야 연산이 됩니다.")
+else:
+    print("결과:{0}".format(result)) #에러가 안난 경우
+finally:
+    print("무조건 실행") #에러가 발생 하든 안하던 무조건 실행 된다.
 
 print("전체 코드 실행 종료")
