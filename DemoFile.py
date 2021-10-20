@@ -38,10 +38,24 @@ print(f.read())
 print(f.tell())
 f.seek(0)
 print('---한줄씩 읽기---')
-print(f.readline())
-print(f.readline())
+print(f.readline(), end='') #end 줄바꾸지 말라, 약간 보정
+print(f.readline(), end='')
 print('---list로 받기---')
 f.seek(0)
 result = f.readlines()
 print(result)
 f.close()
+
+for item in result:
+    print(item.replace('\n', ''))
+
+
+#기존 파일에 첨부
+f = open("c:\\work\\demo.txt", "a+", encoding='utf-8')
+#f = open("c:\\work\\demo.txt", "wt", encoding='utf-8')
+f.write("새로운 데이터\n")
+f.close()
+
+#파일 읽기
+f = open("c:\\work\\demo.txt", "rt", encoding='utf-8')
+print(f.read())
