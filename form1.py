@@ -16,7 +16,7 @@ class DemoForm(QDialog, form_class):
 
 #진입점을 체크 (직접 모듈을 실행했는지 여부)
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    demoWindow = DemoForm()
-    demoWindow.show()
-    app.exec_()
+    app = QApplication(sys.argv) #실행파일 만들고
+    demoWindow = DemoForm() # 인스턴스 만들고
+    demoWindow.show() # 보여주고
+    app.exec_() #이벤트 풀 대기
