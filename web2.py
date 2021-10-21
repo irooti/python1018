@@ -4,6 +4,29 @@ import urllib.request
 #검색
 from bs4 import BeautifulSoup
 
+f = open('c:\\work\\webtoon.txt', 'wt', encoding='utf-8')
+
+#기본 주소
+for i in range(1, 6):
+    url = 'https://comic.naver.com/webtoon/list?titleId=20853&weekday=fri&page=' + str(i)
+    print('조립한주소:', url)
+    data = urllib.request.urlopen(url)
+    soup = BeautifulSoup(data, 'html.parser')
+
+    cartoons = soup.find_all('td', class_='title')
+    for item in cartoons:
+        title = item.find('a').text
+        print(title.strip())
+
+    for item in cartoons:
+        title = item.find('a').text
+        print(title.strip())
+        f.write(title.strip() + '\n')
+
+f.close()
+print('웹 크롤잉 종료~~')
+
+'''
 data = urllib.request.urlopen('http://comic.naver.com/webtoon/list.nhn?titleId=20853&weekday=fri')
 soup = BeautifulSoup(data, 'html.parser')
 
@@ -19,3 +42,8 @@ title = cartoons[0].find('a').text
 link = cartoons[0].find('a')['href'] #[속성] 을 가져 온다
 print(title)
 print(link)
+
+for item in cartoons:
+    title = item.find('a').text
+    print(title.strip())
+'''
