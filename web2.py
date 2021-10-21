@@ -3,10 +3,9 @@
 import urllib.request
 #검색
 from bs4 import BeautifulSoup
-
+#파일에 저장하기
 f = open('c:\\work\\webtoon.txt', 'wt', encoding='utf-8')
-
-#기본 주소
+#수열을 만드는 함수
 for i in range(1, 6):
     url = 'https://comic.naver.com/webtoon/list?titleId=20853&weekday=fri&page=' + str(i)
     print('조립한주소:', url)
