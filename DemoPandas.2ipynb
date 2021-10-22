@@ -1,0 +1,9 @@
+#조각 조가의 데이터를 병합 (merge)
+
+df1 = DataFrame( {'key':['b', 'b', 'a', 'c', 'a', 'a', 'b'],
+                  'data1': range(7)}
+
+)
+
+df1
+
