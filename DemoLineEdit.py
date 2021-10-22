@@ -13,6 +13,7 @@ class DemoWindow(QMainWindow):
         label = QLabel("종목코드", self)
         label.move(20, 20)
 
+        #MS TextBox, Web <input type='text'>
         self.lineEdit = QLineEdit("", self)
         self.lineEdit.move(80, 20)
         self.lineEdit.textChanged.connect(self.lineEditChanged)
